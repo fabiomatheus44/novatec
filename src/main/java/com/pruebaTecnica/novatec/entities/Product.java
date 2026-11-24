@@ -7,14 +7,14 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import lombok.AllArgsConstructor;
+//import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
+//import lombok.NoArgsConstructor;
 
 
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
+//@NoArgsConstructor
+//@AllArgsConstructor
 @Entity
 @Table(name = "product")
 public class Product {
@@ -28,7 +28,25 @@ public class Product {
     @Enumerated(EnumType.STRING) @Column(nullable=false, length=10)
     private ProductType productType;
 
+    protected Product() {}
+    public Product(String productId, String name, ProductType type) 
+    {
+        this.productId=productId;
+        this.productName=name;
+        this.productType=type;
+    }
+    public String getProductId()
+    {
+        return productId;
+    }
+    public String getName()
+    {
+        return productName;
+    }
+    public ProductType getType()
+    {
+        return productType;
+    }
 
-    
 
 }
