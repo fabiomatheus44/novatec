@@ -2,6 +2,7 @@ package com.pruebaTecnica.novatec.services;
 
 import java.time.OffsetDateTime;
 
+import org.springframework.stereotype.Service;
 import org.springframework.web.client.ResourceAccessException;
 
 import com.pruebaTecnica.novatec.dto.CardResponse;
@@ -16,7 +17,7 @@ import jakarta.transaction.Transactional;
 import java.security.SecureRandom;
 import java.util.concurrent.ThreadLocalRandom;
 
-
+@Service
 public class CardService {
 //implemento los servicios
 private final CardRepository cardRepository;
